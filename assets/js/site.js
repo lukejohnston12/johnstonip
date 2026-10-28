@@ -16,7 +16,7 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && nav.classList.contains("is-open")) { setOpen(false); btn.focus(); }
     });
-    matchMedia("(min-width: 921px)").addEventListener("change", (e) => e.matches && setOpen(false));
+    matchMedia("(min-width: 1101px)").addEventListener("change", (e) => e.matches && setOpen(false));
   }
 
   // Reveal on scroll

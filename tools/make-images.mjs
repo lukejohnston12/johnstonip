@@ -7,6 +7,7 @@ import { resolve } from "node:path";
 const root = resolve(import.meta.dirname, "..");
 const font = (f) => `data:font/woff2;base64,${readFileSync(`${root}/assets/fonts/${f}`).toString("base64")}`;
 const mark = readFileSync(`${root}/_includes/logo-mark.html`, "utf8");
+const logo = readFileSync(`${root}/assets/img/logo.svg`, "utf8").replace(/<title>.*?<\/title>/, "");
 const base = `
 @font-face{font-family:M;src:url(${font("montserrat-var.woff2")});font-weight:100 900}
 @font-face{font-family:I;src:url(${font("inter-var.woff2")});font-weight:100 900}
@@ -16,11 +17,11 @@ const og = `<style>${base}
 .c{position:relative;width:1200px;height:630px;overflow:hidden;padding:72px 80px;color:#fff;font-family:M;
 background:radial-gradient(800px 400px at 95% 0,rgba(41,180,239,.35),transparent 60%),#0d1117}
 .s{position:absolute;right:-60px;top:-40px;width:720px;opacity:.9}
-.b{display:flex;align-items:center;gap:16px;font-weight:700;font-size:30px}.b svg{width:80px}
-h1{margin-top:96px;font-size:68px;line-height:1.05;font-weight:800;letter-spacing:-2px;max-width:880px}
-h1 span{color:#29b4ef}p{margin-top:28px;font:500 26px I;color:#a9b4c0}</style>
+.b svg{height:70px;width:auto;display:block}
+h1{margin-top:80px;font-size:68px;line-height:1.05;font-weight:800;letter-spacing:-2px;max-width:880px}
+h1 span{color:#26abe3}p{margin-top:28px;font:500 26px I;color:#a9b4c0}</style>
 <div class="c">${readFileSync(`${root}/_includes/slashes.html`, "utf8").replace('class="slashes"', 'class="s"').replace(/class="s s\d"|class="s"(?= d)/g, "")}
-<div class="b">${mark}Johnston IP Law</div>
+<div class="b">${logo}</div>
 <h1>Grow your brand with <span>trademarks.</span> Protect what you invent with <span>patents.</span></h1>
 <p>Dallas IP counsel · 7,500+ USPTO trademark registrations · Free discovery session</p></div>`;
 
