@@ -17,13 +17,3 @@ social:
 
 # Booking link for the free discovery session. When empty, CTAs go to the contact page.
 booking_url: ""
-
-stats:
-  - value: "7,500+"
-    label: Trademarks registered with the USPTO
-  - value: "30+ yrs"
-    label: Practicing law
-  - value: "5.0"
-    label: Average client rating on FindLaw and Avvo
-  - value: "Best Lawyers"
-    label: D Magazine, Dallas, multiple years

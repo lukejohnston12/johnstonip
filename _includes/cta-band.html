@@ -1,13 +1,13 @@
 <section class="cta" aria-labelledby="cta-title">
+  <div class="mark" aria-hidden="true">{% include logo-mark.html %}</div>
   <div class="wrap">
     <div>
-      <span class="label">Free discovery session</span>
       <h2 id="cta-title">{{ include.title | default: "Impressive IP starts with a conversation." }}</h2>
-      <p>{{ include.text | default: "Tell us what you’re building. You’ll leave knowing what’s protectable, what’s urgent and what can wait, at no cost and with no obligation." }}</p>
+      <p>{{ include.text | default: "Tell us what you’re building. You’ll leave your free discovery session knowing what’s protectable, what’s urgent and what can wait." }}</p>
     </div>
     <div class="stack">
-      <a class="btn btn--blue" href="{% include book-href.html %}">Book your free session <span class="arr" aria-hidden="true">→</span></a>
-      <a class="phone" href="tel:{{ site.data.firm.phone_href }}"><small>Or call the office</small>{{ site.data.firm.phone }}</a>
+      <a class="btn" href="{% include book-href.html %}">Book a free discovery session</a>
+      <a class="call" href="tel:{{ site.data.firm.phone_href }}">or call {{ site.data.firm.phone }}</a>
     </div>
   </div>
 </section>

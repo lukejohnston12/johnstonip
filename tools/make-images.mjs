@@ -9,24 +9,23 @@ const font = (f) => `data:font/woff2;base64,${readFileSync(`${root}/assets/fonts
 const mark = readFileSync(`${root}/_includes/logo-mark.html`, "utf8");
 const logo = readFileSync(`${root}/assets/img/logo.svg`, "utf8").replace(/<title>.*?<\/title>/, "");
 const base = `
-@font-face{font-family:M;src:url(${font("newsreader-display.woff2")});font-weight:400 600}
-@font-face{font-family:P;src:url(${font("plex-mono-400.woff2")})}
-@font-face{font-family:I;src:url(${font("inter-var.woff2")});font-weight:100 900}
-*{margin:0;box-sizing:border-box}body{background:#101317}`;
+@font-face{font-family:M;src:url(${font("archivo-display.woff2")});font-weight:500 800}
+@font-face{font-family:I;src:url(${font("public-sans.woff2")});font-weight:100 900}
+*{margin:0;box-sizing:border-box}body{background:#0b1f33}`;
 
 const og = `<style>${base}
-.c{position:relative;width:1200px;height:630px;overflow:hidden;padding:72px 80px;color:#fff;font-family:M;
-background:#101317}
+.c{position:relative;width:1200px;height:630px;overflow:hidden;padding:72px 80px;color:#0b1f33;font-family:M;
+background:#26abe3}
 .b svg{height:70px;width:auto;display:block}
-h1{margin-top:96px;font-size:76px;line-height:1.04;font-weight:500;letter-spacing:-1.5px;max-width:1000px}
-h1 span{color:#26abe3}p{position:absolute;left:80px;right:80px;bottom:56px;padding-top:22px;border-top:1px solid #343a43;font:400 20px P;letter-spacing:1px;text-transform:uppercase;color:#a3abb5}</style>
+h1{margin-top:92px;font-size:80px;line-height:1;font-weight:700;letter-spacing:-2px;max-width:1000px}.sym{color:#fff}
+h1 span{color:#26abe3}p{position:absolute;left:80px;right:80px;bottom:60px;font:600 26px I;color:#0b1f33}.b{display:inline-block;background:#0b1f33;padding:18px 22px;border-radius:8px}</style>
 <div class="c">
 <div class="b">${logo}</div>
-<h1>Trademark and patent attorneys for companies built to last.</h1>
-<p>Dallas, Texas · 7,500+ USPTO trademarks registered · Free consultation</p></div>`;
+<h1>We take brands from ™ to <span class="sym">®</span> and inventions to patent.</h1>
+<p>Dallas trademark and patent attorneys. 7,500+ trademarks registered.</p></div>`;
 
 const icon = (size) => `<style>${base}
-.i{width:${size}px;height:${size}px;display:grid;place-items:center;background:#101317}.i svg{width:72%}</style>
+.i{width:${size}px;height:${size}px;display:grid;place-items:center;background:#0b1f33}.i svg{width:72%}</style>
 <div class="i">${mark}</div>`;
 
 const browser = await chromium.launch();

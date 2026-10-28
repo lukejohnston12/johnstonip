@@ -18,7 +18,7 @@ scan: true
         <p class="fine" style="margin:0">Fields marked * are required.</p>
       </div>
       <div class="brief-card" data-brief-card hidden>
-        <span class="label" data-brief-ref>Your IP brief</span>
+        <span class="ref" data-brief-ref>Your IP brief</span>
         <p data-brief-sum></p>
         <ul data-brief-list></ul>
       </div>
@@ -47,13 +47,13 @@ scan: true
         <textarea id="f-msg" name="message" rows="5"></textarea>
       </div>
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-      <div><button class="btn" type="submit">Request my free session <span class="arr" aria-hidden="true">→</span></button></div>
+      <div><button class="btn" type="submit">Request my free session</button></div>
       <p class="form-status" role="status" hidden data-form-status></p>
       <p class="fine" style="margin:0">Submitting this form does not create an attorney-client relationship. Please don’t send confidential information until we’ve confirmed there’s no conflict of interest.</p>
     </form>
 
     <div>
-      <span class="label">Prefer to talk now?</span>
+      <h2 style="font-size:1.6rem">Prefer to talk now?</h2>
       <dl class="contact-list">
         <div><dt>Phone</dt><dd><a class="big" href="tel:{{ firm.phone_href }}">{{ firm.phone }}</a></dd></div>
         {%- if firm.email != "" %}

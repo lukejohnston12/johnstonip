@@ -10,17 +10,20 @@ The new Johnston IP Law website: a fast, accessible static site built with Jekyl
 
 GitHub builds Jekyll sites automatically. There is no build pipeline to maintain.
 
+## Design rules
+
+The visual system is written down in `DESIGN.md`. Read it before adding pages or components.
+
 ## Edit content
 
 Most content lives in plain data files, so you rarely need to touch HTML:
 
 | What | Where |
 | --- | --- |
-| Phone, address, social links, homepage stats, booking link | `_data/firm.yml` |
+| Phone, address, social links, booking link | `_data/firm.yml` |
 | FAQs (homepage and FAQ page) | `_data/faqs.yml` |
 | Industries | `_data/industries.yml` |
 | Team | `_data/team.yml` |
-| Services list (homepage) | `_data/services.yml` |
 | IP Scan questions and recommendations | `assets/js/scan.js` (the `STEPS` list and `recommend()` function) |
 | Photos and video | `_data/images.yml` |
 | Main menu | `_data/nav.yml` |
@@ -65,4 +68,4 @@ How the pages stay fast:
 - Semantic HTML, skip link, visible focus states, reduced-motion support, and WCAG AA contrast (checked with axe).
 - Structured data for the firm, founder, breadcrumbs and FAQs, plus a sitemap, canonical URLs and Open Graph tags.
 
-Fonts: Newsreader (headlines), Inter (body) and IBM Plex Mono (labels), all under the SIL Open Font License.
+Fonts: Archivo (headlines, trimmed to a 112% width cut) and Public Sans (body), both under the SIL Open Font License.

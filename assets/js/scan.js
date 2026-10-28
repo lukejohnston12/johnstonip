@@ -77,23 +77,23 @@
 
     function renderStep() {
       const steps = visible(a), s = steps[i], multi = !!s.multi, val = a[s.id];
-      status.textContent = `Step ${i + 1} / ${steps.length}`;
+      status.textContent = `Question ${i + 1} of ${steps.length}`;
       progress(i, steps.length + 1);
       body.innerHTML = `
         <fieldset>
           <legend class="scan-q">${esc(s.q)}</legend>
           <p class="scan-hint">${esc(s.hint || (multi ? "Choose all that apply." : "Choose one."))}</p>
-          <div class="scan-opts">${s.opts.map(([v, l], k) => `
-            <label class="scan-opt${multi ? "" : " radio"}"><input type="${multi ? "checkbox" : "radio"}" name="scan-${s.id}" value="${v}"${(multi ? (val || []).includes(v) : val === v) ? " checked" : ""}><kbd aria-hidden="true">${k + 1}</kbd><span>${esc(l)}</span><i class="box" aria-hidden="true"></i></label>`).join("")}
+          <div class="scan-opts">${s.opts.map(([v, l]) => `
+            <label class="scan-opt${multi ? "" : " radio"}"><input type="${multi ? "checkbox" : "radio"}" name="scan-${s.id}" value="${v}"${(multi ? (val || []).includes(v) : val === v) ? " checked" : ""}><span>${esc(l)}</span><i class="box" aria-hidden="true"></i></label>`).join("")}
           </div>
         </fieldset>
         <div class="scan-nav">
           <button type="button" class="scan-back${i ? "" : " off"}" data-back${i ? "" : ' tabindex="-1" aria-hidden="true"'}>← Back</button>
-          <button type="button" class="btn btn--blue btn--sm" data-next>${i === steps.length - 1 ? "See my brief" : "Continue"} <span class="arr" aria-hidden="true">→</span></button>
+          <button type="button" class="btn btn--blue btn--sm" data-next>${i === steps.length - 1 ? "Show my brief" : "Continue"}</button>
         </div>`;
       cur = { s, multi };
       sync();
-      live.textContent = `Step ${i + 1} of ${steps.length}. ${s.q}`;
+      live.textContent = `Question ${i + 1} of ${steps.length}. ${s.q}`;
       const first = body.querySelector("input:checked") || body.querySelector("input");
       first && first.focus({ preventScroll: true });
     }
@@ -109,14 +109,14 @@
       cur = null;
       const recs = recommend(a), urgent = recs.filter((r) => r.pri === "urgent").length;
       const d = new Date(), ref = "JIP-" + d.toISOString().slice(2, 10).replace(/-/g, "") + "-" + Math.random().toString(16).slice(2, 6).toUpperCase();
-      status.textContent = "Brief ready";
+      status.textContent = "Your brief";
       progress(1, 1);
       const href = contact + "?" + encode(a, ref).toString();
       body.innerHTML = `
         <div class="brief-head"><span>Ref. ${ref}</span><span>${d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span></div>
         <p class="brief-sum" tabindex="-1">${esc(summary(a))} ${recs.length} recommendation${recs.length === 1 ? "" : "s"}${urgent ? `, ${urgent} time-sensitive` : ""}.</p>
         <ol class="brief-list">${recs.map((r, k) => `<li><details${k ? "" : " open"}><summary><span class="pri ${r.pri}">${PRI[r.pri]}</span><b>${esc(r.title)}</b></summary><p>${esc(r.text)}</p></details></li>`).join("")}</ol>
-        <div class="brief-cta"><a class="btn btn--blue" href="${esc(href)}">Review this brief in a free session <span class="arr" aria-hidden="true">→</span></a></div>
+        <div class="brief-cta"><a class="btn btn--blue" href="${esc(href)}">Review this brief in a free session</a></div>
         <div class="brief-foot"><span>General information, not legal advice.</span><button type="button" class="scan-back" data-restart>Start over</button></div>`;
       live.textContent = "Your IP brief is ready.";
       body.querySelector(".brief-sum").focus({ preventScroll: true });

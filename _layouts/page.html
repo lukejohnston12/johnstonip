@@ -16,8 +16,8 @@ layout: default
     {%- if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
     {%- if page.hero_cta %}
     <div class="actions">
-      <a class="btn" href="{% include book-href.html %}{% if page.topic %}?topic={{ page.topic }}{% endif %}">Book a free discovery session <span class="arr" aria-hidden="true">→</span></a>
-      <a class="tlink" href="tel:{{ site.data.firm.phone_href }}">Call {{ site.data.firm.phone }}</a>
+      <a class="btn" href="{% include book-href.html %}{% if page.topic %}?topic={{ page.topic }}{% endif %}">Book a free discovery session</a>
+      <a class="call" href="tel:{{ site.data.firm.phone_href }}">or call {{ site.data.firm.phone }}</a>
     </div>
     {%- endif %}
   </div>

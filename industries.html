@@ -9,9 +9,9 @@ description: "Trademark and patent counsel for software, medical devices, oil an
 ---
 <section class="section">
   <div class="wrap">
-    <ul class="index">
+    <ul class="list">
       {%- for i in site.data.industries %}
-      <li><span class="no">{{ forloop.index | prepend: "00" | slice: -2, 2 }}</span><b>{{ i.name }}</b><p>{{ i.text }}</p></li>
+      <li><b>{{ i.name }}</b><p>{{ i.text }}</p></li>
       {%- endfor %}
     </ul>
   </div>

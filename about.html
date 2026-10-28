@@ -10,19 +10,17 @@ description: "Meet Robert “Bob” Johnston III, founder of Johnston IP Law in 
 {%- assign img = site.data.images -%}
 <section class="section">
   <div class="wrap founder">
-    <figure class="fig">
+    <figure class="portrait">
       <div class="frame">
         {%- if img.founder_portrait.src != "" %}
         <img src="{{ img.founder_portrait.src }}" alt="{{ img.founder_portrait.alt }}" width="{{ img.founder_portrait.width }}" height="{{ img.founder_portrait.height }}" fetchpriority="high" decoding="async">
         {%- else %}
         <div class="ph">{% include logo-mark.html %}</div>
         {%- endif %}
-        <i class="tick a"></i><i class="tick b"></i><i class="tick c"></i><i class="tick d"></i>
       </div>
-      <figcaption><span>Fig. 1</span><span>Founder &amp; Managing Member</span></figcaption>
+      <figcaption><b>Robert “Bob” Johnston III</b>, founder and managing member</figcaption>
     </figure>
     <div class="prose">
-      <span class="label">Our founder</span>
       <h2 style="margin-top:0">Robert “Bob” Johnston III</h2>
       <p class="lede">Bob founded Johnston IP Law, PLLC to help companies and individuals build value and protect their future through trademarks and patents.</p>
       <p>Before starting the firm, he practiced at multinational law firms and served as chief intellectual property counsel for a technology startup that achieved a market capitalization of more than a billion dollars. That in-house seat taught him what IP is actually for: supporting a business as it launches, raises money and grows.</p>
@@ -30,7 +28,7 @@ description: "Meet Robert “Bob” Johnston III, founder of Johnston IP Law in 
       <p>He has been named a D Magazine Best Lawyer in multiple years and has served as chair of the Dallas Bar Association’s Intellectual Property Section.</p>
       <dl class="creds">
         <dt>Education</dt><dd>B.S. Mechanical Engineering, Baylor University<br>J.D., Southern Methodist University</dd>
-        <dt>Admitted</dt><dd>Texas · Oklahoma · Texas federal district courts · U.S. Court of Appeals for the Federal Circuit</dd>
+        <dt>Admitted</dt><dd>Texas and Oklahoma; Texas federal district courts; U.S. Court of Appeals for the Federal Circuit</dd>
         <dt>Registered</dt><dd>U.S. Patent and Trademark Office</dd>
         <dt>Recognition</dt><dd>D Magazine Best Lawyers<br>Past Chair, Dallas Bar Association IP Section</dd>
       </dl>
@@ -40,9 +38,8 @@ description: "Meet Robert “Bob” Johnston III, founder of Johnston IP Law in 
 
 <section class="section section--alt" id="team" aria-labelledby="team-title">
   <div class="wrap">
-    <div class="head">
+    <div class="intro">
       <div>
-        <span class="label">Our team</span>
         <h2 id="team-title">A small team, by design.</h2>
       </div>
       <p>Our attorneys are registered to practice before the USPTO and supported by experienced paraprofessionals, so you always know who is handling your matter.</p>
@@ -57,16 +54,15 @@ description: "Meet Robert “Bob” Johnston III, founder of Johnston IP Law in 
 
 <section class="section" aria-labelledby="values-title">
   <div class="wrap">
-    <div class="head">
+    <div class="intro">
       <div>
-        <span class="label">How we work</span>
         <h2 id="values-title">What working with us is like.</h2>
       </div>
     </div>
     <div class="cols cols-3">
-      <div><span class="label">01</span><h3>Plain English</h3><p>Honest assessments and clear explanations. You’ll always understand your options and what they cost.</p></div>
-      <div><span class="label">02</span><h3>Direct access</h3><p>You work with experienced counsel, not a rotating cast of associates.</p></div>
-      <div><span class="label">03</span><h3>Business first</h3><p>We prioritize the protection that supports your goals, whether that’s launching, raising, licensing or selling.</p></div>
+      <div><h3>Plain English</h3><p>Honest assessments and clear explanations. You’ll always understand your options and what they cost.</p></div>
+      <div><h3>Direct access</h3><p>You work with experienced counsel, not a rotating cast of associates.</p></div>
+      <div><h3>Business first</h3><p>We prioritize the protection that supports your goals, whether that’s launching, raising, licensing or selling.</p></div>
     </div>
   </div>
 </section>

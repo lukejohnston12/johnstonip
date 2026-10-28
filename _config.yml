@@ -27,6 +27,7 @@ timezone: America/Chicago
 
 exclude:
   - README.md
+  - DESIGN.md
   - LICENSE
   - tools/
   - node_modules/
