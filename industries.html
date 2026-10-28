@@ -1,0 +1,23 @@
+---
+layout: page
+title: Industries We Serve
+permalink: /industries/
+breadcrumb: Industries
+eyebrow: Industries
+heading: IP counsel that speaks your industry’s language.
+lede: Every industry protects value differently. We tailor trademark, patent and trade secret strategy to how your market actually works.
+description: "Trademark and patent counsel for software, medical devices, energy, manufacturing, fashion, food and beverage, retail, hospitality, aviation and startups."
+---
+<section class="section">
+  <div class="wrap">
+    <div class="grid grid-3">
+      {%- for i in site.data.industries %}
+      <article class="card reveal">
+        <div class="icon">{% include icon.html name=i.icon %}</div>
+        <h2>{{ i.name }}</h2>
+        <p>{{ i.text }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

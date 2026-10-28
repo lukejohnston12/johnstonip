@@ -1,0 +1,55 @@
+# The "What are you protecting?" discovery widget on the homepage.
+- id: brand
+  icon: tag
+  label: A brand name, logo or slogan
+  tag: Trademark
+  title: You’re looking at a trademark.
+  text: >-
+    A federal registration gives you nationwide rights to your mark for your goods and services.
+    We start with a clearance search so you don’t build a brand on a name someone else already owns.
+  link: /trademarks/
+- id: invention
+  icon: bulb
+  label: An invention, process or machine
+  tag: Utility patent
+  title: You’re looking at a utility patent.
+  text: >-
+    Utility patents protect how something works, generally for 20 years from filing.
+    Talk to us before you publicly show, sell or pitch it — disclosure starts a clock on your rights.
+  link: /patents/
+- id: design
+  icon: pen
+  label: The look or shape of a product
+  tag: Design patent
+  title: You’re looking at a design patent.
+  text: >-
+    Design patents protect the ornamental appearance of a product for 15 years from grant —
+    a powerful tool in fashion, consumer products and anywhere looks sell.
+  link: /patents/#design
+- id: creative
+  icon: copyright
+  label: Software, writing, art or media
+  tag: Copyright
+  title: You’re looking at copyright.
+  text: >-
+    Copyright protects original creative work, including code. Registering with the U.S. Copyright Office
+    is generally required before you can sue for infringement — and it unlocks stronger remedies.
+  link: /other-ip/#copyright
+- id: secret
+  icon: lock
+  label: A formula, method or know-how
+  tag: Trade secret
+  title: You’re looking at a trade secret.
+  text: >-
+    Some of the most valuable IP is never filed anywhere. A trade secret program — the right agreements,
+    access controls and habits — keeps it protectable.
+  link: /other-ip/#trade-secrets
+- id: unsure
+  icon: search
+  label: I’m not sure yet
+  tag: Let’s talk
+  title: That’s exactly what discovery is for.
+  text: >-
+    Most clients have more protectable IP than they realize. In a free discovery session we’ll map
+    what you have, what’s worth protecting, and what to do first.
+  link: /contact/

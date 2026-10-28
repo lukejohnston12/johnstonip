@@ -1,0 +1,14 @@
+---
+layout: null
+permalink: /robots.txt
+---
+{%- if site.preview -%}
+# Preview build: keep out of search results until launch.
+User-agent: *
+Disallow: /
+{%- else -%}
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml
+{%- endif %}

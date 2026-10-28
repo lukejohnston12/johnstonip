@@ -1,0 +1,61 @@
+---
+layout: page
+title: Book a Free Discovery Session
+permalink: /contact/
+breadcrumb: Contact
+eyebrow: Contact
+heading: Book your free discovery session.
+lede: Tell us a little about what you’re building. We’ll follow up personally to find a time that works.
+description: "Book a free, no-obligation discovery session with Johnston IP Law in Dallas, or call (214) 220-9900. Trademark and patent counsel for clients nationwide."
+hide_cta: true
+---
+{%- assign firm = site.data.firm -%}
+<section class="section">
+  <div class="wrap contact-grid">
+    <form class="form" method="post" action="{{ site.contact_form_action }}" data-contact-form{% if site.contact_form_action == "" %} data-preview{% endif %} aria-labelledby="form-title">
+      <div>
+        <h2 id="form-title" style="font-size:1.6rem;margin-bottom:.25em">Request your session</h2>
+        <p class="fine">Fields marked * are required.</p>
+      </div>
+      <div class="row">
+        <div class="field"><label for="f-name">Full name *</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-company">Company <span class="hint">(optional)</span></label><input id="f-company" name="company" autocomplete="organization"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="f-email">Email *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-phone">Phone <span class="hint">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="field">
+        <fieldset>
+          <legend>What would you like to protect?</legend>
+          <div class="pills">
+            {%- for o in site.data.navigator %}
+            <label class="pill"><input type="checkbox" name="topic" value="{{ o.tag }}" data-topic="{{ o.id }}"><span>{{ o.tag }}</span></label>
+            {%- endfor %}
+          </div>
+        </fieldset>
+      </div>
+      <div class="field">
+        <label for="f-msg">Tell us briefly about it <span class="hint">(optional — please don’t share confidential details yet)</span></label>
+        <textarea id="f-msg" name="message" rows="5"></textarea>
+      </div>
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <button class="btn" type="submit">Request my free session {% include icon.html name="arrow" %}</button>
+      <p class="form-status" role="status" hidden data-form-status></p>
+      <p class="fine">Submitting this form does not create an attorney-client relationship. Please don’t include confidential information until we’ve confirmed there’s no conflict of interest.</p>
+    </form>
+
+    <div>
+      <h2 style="font-size:1.6rem">Prefer to talk now?</h2>
+      <p class="lede" style="margin-bottom:32px">Call during business hours and we’ll get you started.</p>
+      <ul class="info-list">
+        <li><span class="ic">{% include icon.html name="phone" %}</span><div><b>Phone</b><a href="tel:{{ firm.phone_href }}">{{ firm.phone }}</a></div></li>
+        {%- if firm.email != "" %}
+        <li><span class="ic">{% include icon.html name="mail" %}</span><div><b>Email</b><a href="mailto:{{ firm.email }}">{{ firm.email }}</a></div></li>
+        {%- endif %}
+        <li><span class="ic">{% include icon.html name="pin" %}</span><div><b>Office</b><address>{{ firm.address.street }}<br>{{ firm.address.city }}, {{ firm.address.region }} {{ firm.address.postal }}</address><a href="{{ firm.map_url }}" rel="noopener">Get directions</a></div></li>
+        <li><span class="ic">{% include icon.html name="globe" %}</span><div><b>Clients nationwide</b><span>Trademarks and patents are federal — we work with clients across the U.S. and coordinate protection abroad.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>

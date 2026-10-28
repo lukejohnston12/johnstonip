@@ -1,0 +1,29 @@
+# Firm facts used across the site. Edit here, and every page updates.
+name: Johnston IP Law, PLLC
+short_name: Johnston IP Law
+phone: "(214) 220-9900"
+phone_href: "+12142209900"
+email: ""            # TODO: add the public contact email
+address:
+  street: 6060 North Central Expressway, Suite 500
+  city: Dallas
+  region: TX
+  postal: "75206"
+  country: US
+map_url: "https://www.google.com/maps/search/?api=1&query=6060+North+Central+Expressway+Suite+500+Dallas+TX+75206"
+social:
+  facebook: "https://www.facebook.com/johnstoniplawpllc/"
+  linkedin: "https://www.linkedin.com/in/robertjohnston2/"
+
+# Booking link for the free discovery session. When empty, CTAs go to the contact page.
+booking_url: ""
+
+stats:
+  - value: "7,500+"
+    label: Trademarks registered with the USPTO
+  - value: "30+"
+    label: Years of legal practice
+  - value: "5.0"
+    label: Average client rating on FindLaw and Avvo
+  - value: "Best Lawyers"
+    label: D Magazine, multiple years

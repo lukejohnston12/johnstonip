@@ -1,0 +1,30 @@
+- name: Software & technology
+  icon: code
+  text: Copyright in code, patents on novel features and systems, and brands that survive a crowded app store.
+- name: Medical devices
+  icon: heart
+  text: Utility and design patents, reexamination experience, and a portfolio strategy that supports regulatory and funding milestones.
+- name: Oil, gas & energy
+  icon: flame
+  text: Protection for tools, equipment and processes — and the trade secrets that make field operations run.
+- name: Manufacturing & industrial
+  icon: factory
+  text: Patents on machines and methods, design patents on product lines, and supplier agreements that keep improvements yours.
+- name: Fashion & apparel
+  icon: shirt
+  text: Brand clearance and registration, plus design patents that protect the look of a collection.
+- name: Food & beverage
+  icon: cup
+  text: Names, logos and packaging that stand out — and recipes and methods protected as trade secrets.
+- name: Retail & consumer products
+  icon: bag
+  text: Trademarks for product lines and marketplaces, design patents, and enforcement against knock-offs.
+- name: Hospitality
+  icon: hotel
+  text: Restaurant, hotel and venue brands registered and protected as you expand to new locations.
+- name: Aviation & aerospace
+  icon: plane
+  text: Engineering-trained counsel for complex mechanical inventions and components.
+- name: Startups & entrepreneurs
+  icon: rocket
+  text: Founder-friendly guidance on what to protect first, on a budget, before you pitch, launch or raise.

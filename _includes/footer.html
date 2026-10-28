@@ -1,0 +1,54 @@
+{%- assign firm = site.data.firm -%}
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="Johnston IP Law, home">
+          {% include logo-mark.html %}
+          <span><b>Johnston IP Law</b><small>Trademarks &amp; Patents</small></span>
+        </a>
+        <p style="margin-top:20px">Dallas-based trademark and patent counsel helping companies and individuals nationwide build value and protect their future.</p>
+        <div class="social">
+          <a href="{{ firm.social.facebook }}" rel="noopener" aria-label="Johnston IP Law on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z"/></svg></a>
+          <a href="{{ firm.social.linkedin }}" rel="noopener" aria-label="Bob Johnston on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"/></svg></a>
+        </div>
+      </div>
+      <nav aria-label="Services">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="{{ '/trademarks/' | relative_url }}">Trademarks</a></li>
+          <li><a href="{{ '/patents/' | relative_url }}">Patents</a></li>
+          <li><a href="{{ '/other-ip/' | relative_url }}">Copyrights &amp; trade secrets</a></li>
+          <li><a href="{{ '/other-ip/' | relative_url }}#licensing">Licensing &amp; agreements</a></li>
+          <li><a href="{{ '/industries/' | relative_url }}">Industries</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Firm">
+        <h2>Firm</h2>
+        <ul>
+          <li><a href="{{ '/about/' | relative_url }}">About Bob Johnston</a></li>
+          <li><a href="{{ '/about/' | relative_url }}#team">Our team</a></li>
+          <li><a href="{{ '/faqs/' | relative_url }}">FAQs</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Visit or call</h2>
+        <address>
+          {{ firm.address.street }}<br>
+          {{ firm.address.city }}, {{ firm.address.region }} {{ firm.address.postal }}<br>
+          <a href="tel:{{ firm.phone_href }}">{{ firm.phone }}</a>
+        </address>
+        <p style="margin-top:16px"><a href="{{ firm.map_url }}" rel="noopener">Get directions</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© {{ site.time | date: "%Y" }} {{ firm.name }}. All rights reserved. Attorney advertising. The information on this site is general and is not legal advice. Contacting the firm does not create an attorney-client relationship.</p>
+      <p>Impressive IP™</p>
+    </div>
+  </div>
+</footer>
+<div class="mobile-cta" data-mobile-cta>
+  <a class="btn btn--ghost call" href="tel:{{ firm.phone_href }}" aria-label="Call {{ firm.phone }}">{% include icon.html name="phone" %}</a>
+  <a class="btn" href="{% include book-href.html %}">Book a free discovery session</a>
+</div>

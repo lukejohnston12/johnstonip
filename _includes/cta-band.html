@@ -1,0 +1,15 @@
+<section class="section section--tight" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <div>
+        <p class="eyebrow">Free discovery session</p>
+        <h2 id="cta-title">{{ include.title | default: "Let’s make your IP impressive." }}</h2>
+        <p>{{ include.text | default: "Tell us what you’re building. We’ll help you understand what can be protected, what it involves, and the smartest next step — at no cost and with no obligation." }}</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="{% include book-href.html %}">Book your free session {% include icon.html name="arrow" %}</a>
+        <a class="btn btn--ghost" href="tel:{{ site.data.firm.phone_href }}">{% include icon.html name="phone" %} Call {{ site.data.firm.phone }}</a>
+      </div>
+    </div>
+  </div>
+</section>

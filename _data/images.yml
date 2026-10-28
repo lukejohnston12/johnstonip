@@ -1,0 +1,15 @@
+# Image sources. For the preview these can point at the current johnstonip.com image URLs;
+# later, copy the files into assets/img/ and point these at the local paths.
+# Any entry left empty falls back to a designed placeholder, so the page never breaks.
+
+founder_portrait:
+  src: ""            # e.g. https://www.johnstonip.com/wp-content/uploads/....jpg
+  alt: Portrait of Robert "Bob" Johnston, founder of Johnston IP Law
+  width: 800
+  height: 1000
+
+intro_video:
+  # The welcome video from the current homepage (YouTube/Vimeo embed URL or MP4).
+  src: ""
+  poster: ""
+  title: A welcome from Bob Johnston

@@ -1,0 +1,92 @@
+{%- assign firm = site.data.firm -%}
+{%- if page.url == "/" -%}{%- assign full_title = page.title -%}{%- else -%}{%- capture full_title -%}{{ page.title }} | {{ site.title }}{%- endcapture -%}{%- endif -%}
+{%- assign desc = page.description | default: site.description | strip_newlines | strip -%}
+{%- assign canonical = page.url | replace: "index.html", "" | prepend: site.url -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ full_title }}</title>
+<meta name="description" content="{{ desc | escape }}">
+<link rel="canonical" href="{{ canonical }}">
+{%- if site.preview %}
+<meta name="robots" content="noindex, nofollow">
+{%- endif %}
+<meta name="theme-color" content="#0d1117">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ full_title | escape }}">
+<meta property="og:description" content="{{ desc | escape }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ '/assets/img/og.png' | prepend: site.baseurl | prepend: site.url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+<link rel="preload" href="{{ '/assets/fonts/montserrat-var.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/inter-var.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<style>{% capture css %}{% include site.css %}{% endcapture %}{{ css | strip_newlines | replace: "  ", "" }}</style>
+<script>document.documentElement.classList.add("js")</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LegalService", "Organization"],
+      "@id": "{{ site.url }}/#firm",
+      "name": {{ firm.name | jsonify }},
+      "alternateName": {{ firm.short_name | jsonify }},
+      "slogan": {{ site.tagline | jsonify }},
+      "url": "{{ site.url }}/",
+      "logo": "{{ site.url }}{{ site.baseurl }}/assets/img/apple-touch-icon.png",
+      "image": "{{ site.url }}{{ site.baseurl }}/assets/img/og.png",
+      "telephone": {{ firm.phone_href | jsonify }},
+      "priceRange": "Free discovery session",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": {{ firm.address.street | jsonify }},
+        "addressLocality": {{ firm.address.city | jsonify }},
+        "addressRegion": {{ firm.address.region | jsonify }},
+        "postalCode": {{ firm.address.postal | jsonify }},
+        "addressCountry": {{ firm.address.country | jsonify }}
+      },
+      "areaServed": [{"@type": "Country", "name": "United States"}],
+      "knowsAbout": ["Trademark registration", "Trademark prosecution", "Patent prosecution", "Utility patents", "Design patents", "Copyright registration", "Trade secrets", "IP licensing", "IP litigation support"],
+      "founder": {"@id": "{{ site.url }}/#bob"},
+      "sameAs": [{{ firm.social.facebook | jsonify }}, {{ firm.social.linkedin | jsonify }}]
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#bob",
+      "name": "Robert \"Bob\" Johnston III",
+      "jobTitle": "Founder and Managing Member",
+      "worksFor": {"@id": "{{ site.url }}/#firm"},
+      "alumniOf": [{"@type": "CollegeOrUniversity", "name": "Southern Methodist University"}, {"@type": "CollegeOrUniversity", "name": "Baylor University"}]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": {{ site.title | jsonify }},
+      "publisher": {"@id": "{{ site.url }}/#firm"}
+    }{% if page.breadcrumb %},
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.url }}/"}{% if page.parent %},
+        {"@type": "ListItem", "position": 2, "name": {{ page.parent.title | jsonify }}, "item": "{{ site.url }}{{ page.parent.url }}"}{% endif %},
+        {"@type": "ListItem", "position": {% if page.parent %}3{% else %}2{% endif %}, "name": {{ page.breadcrumb | jsonify }}, "item": "{{ canonical }}"}
+      ]
+    }{% endif %}{% if page.faq_schema %},
+    {
+      "@type": "FAQPage",
+      "mainEntity": [{% for group in site.data.faqs %}{% for q in group.items %}
+        {"@type": "Question", "name": {{ q.q | jsonify }}, "acceptedAnswer": {"@type": "Answer", "text": {{ q.a | markdownify | strip_html | strip_newlines | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }{% endif %}
+  ]
+}
+</script>

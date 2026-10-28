@@ -1,0 +1,37 @@
+---
+layout: page
+title: Trademark & Patent FAQs
+permalink: /faqs/
+breadcrumb: FAQs
+eyebrow: FAQs
+heading: Straight answers about trademarks, patents and more.
+lede: General information to help you get oriented. For advice on your situation, book a free discovery session.
+description: "Answers to common questions about trademark registration, ™ vs ®, patent types and terms, provisional applications, software patents, copyrights and trade secrets."
+faq_schema: true
+---
+<section class="section">
+  <div class="wrap split">
+    <div>
+      {%- for group in site.data.faqs %}
+      <div class="faq-group">
+        <h2>{{ group.group }}</h2>
+        <div class="faq">
+          {%- for q in group.items %}
+          <details>
+            <summary>{{ q.q }} <span class="pm" aria-hidden="true"></span></summary>
+            <div class="a">{{ q.a | markdownify }}</div>
+          </details>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- endfor %}
+      <p class="fine" style="margin-top:40px;color:var(--muted);font-size:.9rem">This information is general and is not legal advice. Reading it does not create an attorney-client relationship.</p>
+    </div>
+    <aside class="aside-card" aria-labelledby="faq-aside">
+      <h2 id="faq-aside">Still have questions?</h2>
+      <p>Get answers specific to your business in a free, no-obligation discovery session.</p>
+      <a class="btn" href="{% include book-href.html %}">Book a free session</a>
+      <a class="phone" href="tel:{{ site.data.firm.phone_href }}">or call {{ site.data.firm.phone }}</a>
+    </aside>
+  </div>
+</section>

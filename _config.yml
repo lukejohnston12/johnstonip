@@ -1,0 +1,40 @@
+# Johnston IP Law — site configuration
+# GitHub Pages builds this site with Jekyll automatically (no plugins needed).
+
+title: Johnston IP Law
+tagline: Impressive IP™
+description: >-
+  Dallas trademark and patent attorneys helping companies and individuals nationwide
+  build value and protect their future. 7,500+ trademarks registered with the USPTO.
+  Book a free discovery session.
+
+# Live domain, used for canonical URLs and structured data.
+url: "https://www.johnstonip.com"
+
+# GitHub Pages project path. Set to "" when the custom domain (johnstonip.com) is pointed here.
+baseurl: "/johnstonip"
+
+# Preview mode: adds noindex so the preview never competes with the live site in search.
+# Set to false at launch.
+preview: true
+
+# Contact form endpoint (e.g. Formspree, Basin, or a serverless function).
+# Leave empty while previewing; the form will tell visitors to call or book instead.
+contact_form_action: ""
+
+lang: en-US
+timezone: America/Chicago
+
+exclude:
+  - README.md
+  - LICENSE
+  - tools/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: default }
