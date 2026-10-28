@@ -1,190 +1,166 @@
 ---
-title: "Johnston IP Law | Dallas Trademark & Patent Attorneys"
-description: "Grow your brand with trademarks. Protect your innovations with patents. Dallas IP counsel behind 7,500+ USPTO trademark registrations. Book a free discovery session."
+title: "Dallas Trademark & Patent Attorneys | Johnston IP Law"
+description: "Dallas trademark and patent attorneys for brands and inventors nationwide. 7,500+ USPTO trademark registrations, engineering-trained patent counsel and a free discovery session."
+scan: true
 ---
 {%- assign firm = site.data.firm -%}
 {%- assign img = site.data.images -%}
 
 <section class="hero" aria-labelledby="hero-title">
-  {% include slashes.html %}
   <div class="wrap">
     <div>
-      <p class="eyebrow">Impressive IP™ &nbsp;·&nbsp; Dallas, Texas</p>
-      <h1 id="hero-title">
-        <span class="line">Grow your brand with <span class="hl">trademarks.</span></span>
-        <span class="line">Protect what you invent with <span class="hl">patents.</span></span>
-      </h1>
-      <p class="lede">Johnston IP Law helps companies and individuals nationwide build value and protect their future — with big-firm experience, boutique attention and a free discovery session to start.</p>
-      <div class="hero-actions">
-        <a class="btn" href="{% include book-href.html %}">Book a free discovery session {% include icon.html name="arrow" %}</a>
-        <a class="btn btn--ghost" href="tel:{{ firm.phone_href }}">{% include icon.html name="phone" %} {{ firm.phone }}</a>
+      <span class="label">Johnston IP Law · Dallas, Texas · Clients nationwide</span>
+      <h1 id="hero-title">Trademark and patent attorneys for companies built to last.</h1>
+      <p class="lede">We clear and register brands, patent inventions and designs, and make sure what you create stays yours, backed by 7,500+ USPTO trademark registrations and an engineer’s eye for detail.</p>
+      <div class="actions">
+        <a class="btn" href="{% include book-href.html %}">Book a free discovery session <span class="arr" aria-hidden="true">→</span></a>
+        <a class="tlink" href="tel:{{ firm.phone_href }}">Call {{ firm.phone }}</a>
       </div>
-      <ul class="hero-meta">
-        <li>{% include icon.html name="check" stroke=2.4 %} No-cost, no-obligation consultation</li>
-        <li>{% include icon.html name="check" stroke=2.4 %} Registered to practice before the USPTO</li>
+      <ul class="facts">
+        <li>Registered before the USPTO</li>
+        <li>Free consultation</li>
+        <li>No obligation</li>
       </ul>
     </div>
 
-    <form class="navigator" aria-labelledby="nav-title" onsubmit="return false">
-      <h2 id="nav-title">What are you protecting?</h2>
-      <p>Pick one — we’ll point you to the right kind of protection.</p>
-      <fieldset>
-        <legend class="sr-only">What are you protecting?</legend>
-        <div class="choices">
-          {%- for o in site.data.navigator %}
-          <div class="choice">
-            <input type="radio" name="protect" id="nv-{{ o.id }}" value="{{ o.id }}" aria-describedby="ans-{{ o.id }}">
-            <label for="nv-{{ o.id }}">{% include icon.html name=o.icon %} {{ o.label }} <span class="tag">{{ o.tag }}</span></label>
-          </div>
-          {%- endfor %}
+    <section class="scan" data-scan data-contact="{% include book-href.html %}" aria-label="IP Scan">
+      <div class="scan-bar"><span><span class="dot" aria-hidden="true"></span>IP Scan</span><span data-scan-status>~60 seconds</span></div>
+      <div class="scan-progress" data-scan-progress aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="scan-body" data-scan-body>
+        <div class="scan-intro">
+          <h2 id="scan-title">What should you protect first?</h2>
+          <p>Answer a few quick questions and get a prioritized IP brief for your business. Free, with no email required.</p>
+          <ol>
+            <li><span>01</span>Tell us what you’re building</li>
+            <li><span>02</span>Answer up to four follow-up questions</li>
+            <li><span>03</span>See what’s urgent, what’s next and what can wait</li>
+          </ol>
+          <div class="scan-legend" aria-hidden="true">Ranked by <span class="pri urgent">Urgent</span><span class="pri now">Now</span><span class="pri">Next</span><span class="pri">Later</span></div>
         </div>
-      </fieldset>
-      {%- for o in site.data.navigator %}
-      <div class="answer" id="ans-{{ o.id }}">
-        <h3>{{ o.title }}</h3>
-        <p>{{ o.text }} <a href="{{ o.link | relative_url }}">Learn more<span class="sr-only"> about {{ o.tag }}</span></a></p>
-        <a class="btn btn--dark" href="{% include book-href.html %}?topic={{ o.id }}">Discuss it in a free session {% include icon.html name="arrow" %}</a>
+        <div class="scan-nav">
+          <span class="fine" style="color:var(--on-ink-muted)">General information, not legal advice.</span>
+          <a class="btn btn--blue btn--sm" href="{% include book-href.html %}" data-start role="button">Start the scan <span class="arr" aria-hidden="true">→</span></a>
+        </div>
       </div>
-      {%- endfor %}
-      <p class="sr-only" aria-live="polite" data-nav-live></p>
-    </form>
+      <p class="sr-only" aria-live="polite" data-scan-live></p>
+    </section>
   </div>
 </section>
 
-<section class="proof" aria-label="Firm highlights">
+<section class="record" aria-label="The firm by the numbers">
   <div class="wrap">
     <dl>
       {%- for s in firm.stats %}
-      <div><dt>{{ s.value | replace: "+", "<span>+</span>" }}</dt><dd>{{ s.label }}</dd></div>
+      <div><dt>{{ s.value }}</dt><dd>{{ s.label }}</dd></div>
       {%- endfor %}
     </dl>
   </div>
 </section>
 
-<section class="section" aria-labelledby="what-title">
+<section class="section" aria-labelledby="svc-title">
   <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">What we do</p>
-      <h2 id="what-title">From trademark registration to patent prosecution, we’ve got you covered.</h2>
-      <p class="lede">Johnston IP Law guides you through the world of intellectual property — with clear advice on what to protect, how, and when.</p>
+    <div class="head">
+      <div>
+        <span class="label">Services</span>
+        <h2 id="svc-title">Intellectual property protection, end to end.</h2>
+      </div>
+      <p>Johnston IP Law is a Dallas intellectual property firm. We handle the full life of your IP, from the first clearance search to the license that pays for it, for clients across Texas and the United States.</p>
     </div>
-    <div class="grid grid-3">
-      <article class="card card--feature reveal">
-        <div class="icon">{% include icon.html name="tag" %}</div>
-        <h3>Trademarks</h3>
-        <p>Own your name in the marketplace. Our representation has led to 7,500+ trademark registrations with the USPTO.</p>
-        <ul>
-          <li>{% include icon.html name="check" stroke=2.4 %} Clearance searches &amp; risk opinions</li>
-          <li>{% include icon.html name="check" stroke=2.4 %} Federal applications &amp; office actions</li>
-          <li>{% include icon.html name="check" stroke=2.4 %} Monitoring, renewals &amp; enforcement</li>
-        </ul>
-        <a class="link-arrow" href="{{ '/trademarks/' | relative_url }}">Explore trademarks {% include icon.html name="arrow" %}</a>
-      </article>
-      <article class="card reveal">
-        <div class="icon">{% include icon.html name="bulb" %}</div>
-        <h3>Patents</h3>
-        <p>Turn your inventions into assets. Engineering-trained counsel for utility and design patents, from first sketch to issued patent.</p>
-        <ul>
-          <li>{% include icon.html name="check" stroke=2.4 %} Patentability searches</li>
-          <li>{% include icon.html name="check" stroke=2.4 %} Provisional, utility &amp; design applications</li>
-          <li>{% include icon.html name="check" stroke=2.4 %} USPTO prosecution &amp; portfolio strategy</li>
-        </ul>
-        <a class="link-arrow" href="{{ '/patents/' | relative_url }}">Explore patents {% include icon.html name="arrow" %}</a>
-      </article>
-      <article class="card reveal">
-        <div class="icon">{% include icon.html name="shield" %}</div>
-        <h3>Other IP</h3>
-        <p>The rest of your IP toolkit — so the value you create stays yours, on paper and in practice.</p>
-        <ul>
-          <li>{% include icon.html name="check" stroke=2.4 %} Copyright registrations</li>
-          <li>{% include icon.html name="check" stroke=2.4 %} Trade secret programs</li>
-          <li>{% include icon.html name="check" stroke=2.4 %} Licensing, agreements &amp; litigation support</li>
-        </ul>
-        <a class="link-arrow" href="{{ '/other-ip/' | relative_url }}">Explore other IP {% include icon.html name="arrow" %}</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--mist" aria-labelledby="how-title">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <p class="eyebrow">How it works</p>
-      <h2 id="how-title">Clarity first. Then protection.</h2>
-      <p class="lede center">Every engagement starts with a free discovery session — a conversation about your business, not a sales pitch.</p>
-    </div>
-    <ol class="steps">
-      <li class="reveal"><h3>Book a discovery session</h3><p>Pick a time or call us. It’s free, and there’s no obligation.</p></li>
-      <li class="reveal"><h3>Map your IP</h3><p>We learn what you’re building and identify what can be protected — brands, inventions, designs, content and know-how.</p></li>
-      <li class="reveal"><h3>Get a clear plan</h3><p>You’ll leave with straightforward recommendations, priorities and next steps — in plain English.</p></li>
-      <li class="reveal"><h3>Protect &amp; grow</h3><p>We file, prosecute and maintain your rights, and stay in your corner as your business grows.</p></li>
+    <ol class="docket">
+      {%- for s in site.data.services %}
+      <li><a href="{{ s.url | relative_url }}"><span class="no">{{ forloop.index | prepend: "00" | slice: -2, 2 }}</span><h3>{{ s.name }}</h3><div><p>{{ s.text }}</p><small>{{ s.includes }}</small></div><span class="arr" aria-hidden="true">→</span></a></li>
+      {%- endfor %}
     </ol>
   </div>
 </section>
 
-<section class="section" aria-labelledby="founder-title">
+<section class="section section--alt" aria-labelledby="founder-title">
   <div class="wrap founder">
-    <figure class="portrait reveal">
-      {%- if img.founder_portrait.src != "" %}
-      <img src="{{ img.founder_portrait.src }}" alt="{{ img.founder_portrait.alt }}" width="{{ img.founder_portrait.width }}" height="{{ img.founder_portrait.height }}" loading="lazy" decoding="async">
-      {%- else %}
-      <div class="monogram">{% include logo-mark.html %}</div>
-      {%- endif %}
-      <figcaption><b>Robert “Bob” Johnston III</b><span>Founder &amp; Managing Member</span></figcaption>
+    <figure class="fig">
+      <div class="frame">
+        {%- if img.founder_portrait.src != "" %}
+        <img src="{{ img.founder_portrait.src }}" alt="{{ img.founder_portrait.alt }}" width="{{ img.founder_portrait.width }}" height="{{ img.founder_portrait.height }}" loading="lazy" decoding="async">
+        {%- else %}
+        <div class="ph">{% include logo-mark.html %}</div>
+        {%- endif %}
+        <i class="tick a"></i><i class="tick b"></i><i class="tick c"></i><i class="tick d"></i>
+      </div>
+      <figcaption><span>Fig. 1</span><span>Robert “Bob” Johnston III, Founder</span></figcaption>
     </figure>
-    <div class="reveal">
-      <p class="eyebrow">Meet the founder</p>
-      <h2 id="founder-title">An engineer’s mind. A big-firm résumé. Your direct line.</h2>
-      <p class="pull">We help people and companies create value.</p>
-      <p>Bob Johnston founded Johnston IP Law after years at multinational law firms and as chief intellectual property counsel for a technology startup that grew past a billion-dollar market capitalization. Trained as a mechanical engineer, he prepares and prosecutes trademark and patent applications before the USPTO for clients from solo founders to established companies.</p>
-      <ul class="creds">
-        <li>{% include icon.html name="award" %} D Magazine Best Lawyers, multiple years</li>
-        <li>{% include icon.html name="users" %} Past chair, Dallas Bar Association IP Section</li>
-        <li>{% include icon.html name="grad" %} B.S. Mechanical Engineering, Baylor · J.D., SMU</li>
-        <li>{% include icon.html name="scale" %} Admitted in Texas, Oklahoma &amp; the Federal Circuit</li>
-      </ul>
-      <a class="link-arrow" href="{{ '/about/' | relative_url }}">More about Bob and the team {% include icon.html name="arrow" %}</a>
+    <div>
+      <span class="label">Your attorney</span>
+      <h2 id="founder-title">You’ll work directly with Bob Johnston.</h2>
+      <p class="lede">Bob trained as a mechanical engineer before earning his law degree, and has spent more than three decades practicing law: at multinational law firms, as chief IP counsel for a technology startup that grew past a billion-dollar market capitalization, and now as the attorney his clients call directly.</p>
+      <p>That combination matters. An engineer reads your invention the way an examiner will. A former in-house counsel knows what investors and acquirers look for in an IP portfolio. And at a boutique firm, your matter doesn’t get handed down the hall.</p>
+      <dl class="creds">
+        <dt>Education</dt><dd>B.S. Mechanical Engineering, Baylor University · J.D., Southern Methodist University</dd>
+        <dt>Admitted</dt><dd>Texas · Oklahoma · U.S. Court of Appeals for the Federal Circuit</dd>
+        <dt>Registered</dt><dd>U.S. Patent and Trademark Office</dd>
+        <dt>Recognition</dt><dd>D Magazine Best Lawyers · Past Chair, Dallas Bar Association IP Section</dd>
+      </dl>
+      <a class="tlink" href="{{ '/about/' | relative_url }}">More about Bob and the team <span class="arr" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 
-<section class="section dark" aria-labelledby="ind-title">
+<section class="section" aria-labelledby="how-title">
   <div class="wrap">
-    <div class="section-head reveal">
-      <p class="eyebrow">Industries</p>
-      <h2 id="ind-title">IP counsel that speaks your industry’s language.</h2>
-      <p class="lede">From apparel design patents to oilfield equipment, we’ve protected ideas across a wide range of markets.</p>
+    <div class="head">
+      <div>
+        <span class="label">How it works</span>
+        <h2 id="how-title">What happens after you reach out.</h2>
+      </div>
+      <p>No forms to decode and no surprises. Every engagement starts with a free conversation about your business, not a sales pitch.</p>
     </div>
-    <ul class="chips reveal">
-      {%- for i in site.data.industries %}
-      <li>{% include icon.html name=i.icon %} {{ i.name }}</li>
+    <ol class="steps">
+      <li><span class="no">Step 01</span><h3>A conversation</h3><p>A free discovery session about your business, your plans and what you’ve created. Bring your questions.</p></li>
+      <li><span class="no">Step 02</span><h3>A clear map</h3><p>We identify what’s protectable, what’s at risk and what can wait, and explain it in plain English.</p></li>
+      <li><span class="no">Step 03</span><h3>A plan you can act on</h3><p>Prioritized recommendations that fit your timeline and budget, so you protect what matters most first.</p></li>
+      <li><span class="no">Step 04</span><h3>Filed and followed through</h3><p>We prepare, file and prosecute your applications, then keep watch over your rights after they issue.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="ind-title">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="label">Industries</span>
+        <h2 id="ind-title">Fluent in your industry.</h2>
+      </div>
+      <p>From apparel design patents to oilfield equipment, we’ve protected ideas in markets where the details decide the outcome. <a href="{{ '/industries/' | relative_url }}">See industries we serve</a>.</p>
+    </div>
+    <ul class="index">
+      {%- for i in site.data.industries limit:8 %}
+      <li><span class="no">{{ forloop.index | prepend: "00" | slice: -2, 2 }}</span><b>{{ i.name }}</b></li>
       {%- endfor %}
     </ul>
-    <p style="margin-top:36px"><a class="link-arrow" href="{{ '/industries/' | relative_url }}">See how we help by industry {% include icon.html name="arrow" %}</a></p>
   </div>
 </section>
 
 <section class="section" aria-labelledby="faq-title">
   <div class="wrap split">
     <div>
-      <div class="section-head reveal">
-        <p class="eyebrow">Common questions</p>
-        <h2 id="faq-title">Straight answers to get you started.</h2>
+      <div class="head" style="grid-template-columns:1fr">
+        <div>
+          <span class="label">Common questions</span>
+          <h2 id="faq-title">Questions we hear every week.</h2>
+        </div>
       </div>
-      <div class="faq reveal">
-        {%- for q in site.data.faqs[0].items limit:4 %}
+      <div class="faq">
+        {%- for q in site.data.faqs[0].items limit:5 %}
         <details>
-          <summary>{{ q.q }} <span class="pm" aria-hidden="true"></span></summary>
+          <summary>{{ q.q }}</summary>
           <div class="a">{{ q.a | markdownify }}</div>
         </details>
         {%- endfor %}
       </div>
-      <p style="margin-top:28px"><a class="link-arrow" href="{{ '/faqs/' | relative_url }}">All FAQs {% include icon.html name="arrow" %}</a></p>
+      <p style="margin-top:28px"><a class="tlink" href="{{ '/faqs/' | relative_url }}">All trademark and patent FAQs <span class="arr" aria-hidden="true">→</span></a></p>
     </div>
-    <aside class="aside-card reveal" aria-labelledby="aside-title">
+    <aside class="aside" aria-labelledby="aside-title">
       <h2 id="aside-title">Have a question that isn’t here?</h2>
-      <p>Bring it to a free discovery session. We’ll give you a straight answer and a clear next step.</p>
-      <a class="btn" href="{% include book-href.html %}">Book a free session</a>
+      <p>Bring it to a free discovery session. You’ll get a straight answer and a clear next step.</p>
+      <a class="btn" href="{% include book-href.html %}">Book a free session <span class="arr" aria-hidden="true">→</span></a>
       <a class="phone" href="tel:{{ firm.phone_href }}">or call {{ firm.phone }}</a>
     </aside>
   </div>

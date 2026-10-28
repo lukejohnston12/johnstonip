@@ -10,5 +10,8 @@
 </main>
 {% include footer.html %}
 <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+{%- if page.scan %}
+<script src="{{ '/assets/js/scan.js' | relative_url }}" defer></script>
+{%- endif %}
 </body>
 </html>

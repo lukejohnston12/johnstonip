@@ -1,23 +1,18 @@
 ---
 layout: page
-title: Industries We Serve
+title: IP Law by Industry
 permalink: /industries/
 breadcrumb: Industries
-eyebrow: Industries
-heading: IP counsel that speaks your industry’s language.
-lede: Every industry protects value differently. We tailor trademark, patent and trade secret strategy to how your market actually works.
-description: "Trademark and patent counsel for software, medical devices, energy, manufacturing, fashion, food and beverage, retail, hospitality, aviation and startups."
+heading: Fluent in your industry.
+lede: Every market protects value differently. We shape trademark, patent and trade secret strategy around how your industry actually competes.
+description: "Trademark and patent counsel for software, medical devices, oil and gas, manufacturing, fashion, food and beverage, retail, hospitality, aviation and startups."
 ---
 <section class="section">
   <div class="wrap">
-    <div class="grid grid-3">
+    <ul class="index">
       {%- for i in site.data.industries %}
-      <article class="card reveal">
-        <div class="icon">{% include icon.html name=i.icon %}</div>
-        <h2>{{ i.name }}</h2>
-        <p>{{ i.text }}</p>
-      </article>
+      <li><span class="no">{{ forloop.index | prepend: "00" | slice: -2, 2 }}</span><b>{{ i.name }}</b><p>{{ i.text }}</p></li>
       {%- endfor %}
-    </div>
+    </ul>
   </div>
 </section>

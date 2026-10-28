@@ -20,7 +20,8 @@ Most content lives in plain data files, so you rarely need to touch HTML:
 | FAQs (homepage and FAQ page) | `_data/faqs.yml` |
 | Industries | `_data/industries.yml` |
 | Team | `_data/team.yml` |
-| "What are you protecting?" tool | `_data/navigator.yml` |
+| Services list (homepage) | `_data/services.yml` |
+| IP Scan questions and recommendations | `assets/js/scan.js` (the `STEPS` list and `recommend()` function) |
 | Photos and video | `_data/images.yml` |
 | Main menu | `_data/nav.yml` |
 | Page copy | `index.html`, `trademarks.html`, `patents.html`, `other-ip.html`, `industries.html`, `about.html`, `faqs.html`, `contact.html` |
@@ -35,6 +36,12 @@ Most content lives in plain data files, so you rarely need to touch HTML:
 - [ ] **Facts:** confirm the credentials and stats against the firm's records (education, admissions, awards, "30+ years", review ratings).
 - [ ] **Media page:** the old site has blog posts and webinars that aren't migrated yet. Set up redirects for any old URLs that have backlinks.
 - [ ] **Go live:** in `_config.yml`, set `baseurl: ""` and `preview: false`. Add a `CNAME` file containing `www.johnstonip.com`, then point DNS at GitHub Pages.
+
+## The IP Scan
+
+The homepage's IP Scan asks up to five questions, skipping the ones that don't apply, and builds a prioritized brief (Urgent / Now / Next / Later). The **Review this brief** button carries the answers to the contact page, where the brief appears above the form. It also checks the matching topics and fills a hidden `ip_scan` field, so the brief arrives with the submission once the form is connected. The scan fires an `ipscan:complete` browser event, which analytics can listen for later.
+
+The recommendation text is general information and is worded cautiously. Have an attorney review `assets/js/scan.js` before launch.
 
 ## Run locally
 
@@ -52,10 +59,10 @@ To regenerate the social share image and icons after a brand change, run `node t
 Every page scored 99–100 for Performance, Accessibility and Best Practices in Lighthouse (mobile), with CLS 0 and LCP under 2.1s on a simulated mobile network. SEO scores 100 once `preview` is off; preview mode deliberately blocks search indexing so the preview doesn't compete with the live site.
 
 How the pages stay fast:
-- No frameworks. About 3 KB of optional JavaScript, and the site works without it.
+- No frameworks. A few KB of JavaScript for the menu, contact form and IP Scan; every page still works without it.
 - CSS is inlined, so nothing blocks rendering.
 - Self-hosted variable fonts, preloaded, with size-matched fallbacks so text doesn't jump when fonts load.
 - Semantic HTML, skip link, visible focus states, reduced-motion support, and WCAG AA contrast (checked with axe).
 - Structured data for the firm, founder, breadcrumbs and FAQs, plus a sitemap, canonical URLs and Open Graph tags.
 
-Fonts: Montserrat and Inter, both under the SIL Open Font License.
+Fonts: Newsreader (headlines), Inter (body) and IBM Plex Mono (labels), all under the SIL Open Font License.

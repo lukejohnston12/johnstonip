@@ -10,24 +10,13 @@
     const setOpen = (open) => {
       btn.setAttribute("aria-expanded", String(open));
       nav.classList.toggle("is-open", open);
-      btn.querySelector(".sr-only").textContent = open ? "Close menu" : "Menu";
+      btn.querySelector("[data-menu-label]").textContent = open ? "Close" : "Menu";
     };
     btn.addEventListener("click", () => setOpen(btn.getAttribute("aria-expanded") !== "true"));
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && nav.classList.contains("is-open")) { setOpen(false); btn.focus(); }
     });
     matchMedia("(min-width: 1101px)").addEventListener("change", (e) => e.matches && setOpen(false));
-  }
-
-  // Reveal on scroll
-  const items = $$(".reveal");
-  if ("IntersectionObserver" in window && items.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-    items.forEach((el) => io.observe(el));
-  } else {
-    items.forEach((el) => el.classList.add("in"));
   }
 
   // Mobile sticky CTA appears once the hero's own buttons have scrolled away

@@ -1,22 +1,28 @@
 ---
 layout: page
-title: Book a Free Discovery Session
+title: Free IP Consultation in Dallas
 permalink: /contact/
 breadcrumb: Contact
-eyebrow: Contact
 heading: Book your free discovery session.
-lede: Tell us a little about what you’re building. We’ll follow up personally to find a time that works.
-description: "Book a free, no-obligation discovery session with Johnston IP Law in Dallas, or call (214) 220-9900. Trademark and patent counsel for clients nationwide."
+lede: Tell us a little about what you’re building, and we’ll follow up personally to find a time that works.
+description: "Book a free, no-obligation IP consultation with Johnston IP Law in Dallas, or call (214) 220-9900. Trademark and patent counsel for clients nationwide."
 hide_cta: true
+scan: true
 ---
 {%- assign firm = site.data.firm -%}
 <section class="section">
   <div class="wrap contact-grid">
     <form class="form" method="post" action="{{ site.contact_form_action }}" data-contact-form{% if site.contact_form_action == "" %} data-preview{% endif %} aria-labelledby="form-title">
       <div>
-        <h2 id="form-title" style="font-size:1.6rem;margin-bottom:.25em">Request your session</h2>
-        <p class="fine">Fields marked * are required.</p>
+        <h2 id="form-title">Request your session</h2>
+        <p class="fine" style="margin:0">Fields marked * are required.</p>
       </div>
+      <div class="brief-card" data-brief-card hidden>
+        <span class="label" data-brief-ref>Your IP brief</span>
+        <p data-brief-sum></p>
+        <ul data-brief-list></ul>
+      </div>
+      <input type="hidden" name="ip_scan" value="">
       <div class="row">
         <div class="field"><label for="f-name">Full name *</label><input id="f-name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="f-company">Company <span class="hint">(optional)</span></label><input id="f-company" name="company" autocomplete="organization"></div>
@@ -28,34 +34,34 @@ hide_cta: true
       <div class="field">
         <fieldset>
           <legend>What would you like to protect?</legend>
-          <div class="pills">
-            {%- for o in site.data.navigator %}
-            <label class="pill"><input type="checkbox" name="topic" value="{{ o.tag }}" data-topic="{{ o.id }}"><span>{{ o.tag }}</span></label>
+          <div class="checks">
+            {%- assign topics = "brand:Trademark,invention:Utility patent,design:Design patent,creative:Copyright,secret:Trade secret,unsure:Not sure yet" | split: "," %}
+            {%- for t in topics %}{% assign kv = t | split: ":" %}
+            <label class="check"><input type="checkbox" name="topic" value="{{ kv[1] }}" data-topic="{{ kv[0] }}"><span>{{ kv[1] }}</span></label>
             {%- endfor %}
           </div>
         </fieldset>
       </div>
       <div class="field">
-        <label for="f-msg">Tell us briefly about it <span class="hint">(optional — please don’t share confidential details yet)</span></label>
+        <label for="f-msg">Anything we should know? <span class="hint">(optional; please keep confidential details for the call)</span></label>
         <textarea id="f-msg" name="message" rows="5"></textarea>
       </div>
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
-      <button class="btn" type="submit">Request my free session {% include icon.html name="arrow" %}</button>
+      <div><button class="btn" type="submit">Request my free session <span class="arr" aria-hidden="true">→</span></button></div>
       <p class="form-status" role="status" hidden data-form-status></p>
-      <p class="fine">Submitting this form does not create an attorney-client relationship. Please don’t include confidential information until we’ve confirmed there’s no conflict of interest.</p>
+      <p class="fine" style="margin:0">Submitting this form does not create an attorney-client relationship. Please don’t send confidential information until we’ve confirmed there’s no conflict of interest.</p>
     </form>
 
     <div>
-      <h2 style="font-size:1.6rem">Prefer to talk now?</h2>
-      <p class="lede" style="margin-bottom:32px">Call during business hours and we’ll get you started.</p>
-      <ul class="info-list">
-        <li><span class="ic">{% include icon.html name="phone" %}</span><div><b>Phone</b><a href="tel:{{ firm.phone_href }}">{{ firm.phone }}</a></div></li>
+      <span class="label">Prefer to talk now?</span>
+      <dl class="contact-list">
+        <div><dt>Phone</dt><dd><a class="big" href="tel:{{ firm.phone_href }}">{{ firm.phone }}</a></dd></div>
         {%- if firm.email != "" %}
-        <li><span class="ic">{% include icon.html name="mail" %}</span><div><b>Email</b><a href="mailto:{{ firm.email }}">{{ firm.email }}</a></div></li>
+        <div><dt>Email</dt><dd><a href="mailto:{{ firm.email }}">{{ firm.email }}</a></dd></div>
         {%- endif %}
-        <li><span class="ic">{% include icon.html name="pin" %}</span><div><b>Office</b><address>{{ firm.address.street }}<br>{{ firm.address.city }}, {{ firm.address.region }} {{ firm.address.postal }}</address><a href="{{ firm.map_url }}" rel="noopener">Get directions</a></div></li>
-        <li><span class="ic">{% include icon.html name="globe" %}</span><div><b>Clients nationwide</b><span>Trademarks and patents are federal — we work with clients across the U.S. and coordinate protection abroad.</span></div></li>
-      </ul>
+        <div><dt>Office</dt><dd><address>{{ firm.address.street }}<br>{{ firm.address.city }}, {{ firm.address.region }} {{ firm.address.postal }}</address><a href="{{ firm.map_url }}" rel="noopener">Get directions</a></dd></div>
+        <div><dt>Where we work</dt><dd>Trademarks and patents are federal, so we represent clients across the U.S. from Dallas and coordinate protection abroad.</dd></div>
+      </dl>
     </div>
   </div>
 </section>

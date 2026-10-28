@@ -3,8 +3,7 @@ layout: page
 title: Trademark & Patent FAQs
 permalink: /faqs/
 breadcrumb: FAQs
-eyebrow: FAQs
-heading: Straight answers about trademarks, patents and more.
+heading: Trademark and patent questions, answered plainly.
 lede: General information to help you get oriented. For advice on your situation, book a free discovery session.
 description: "Answers to common questions about trademark registration, ™ vs ®, patent types and terms, provisional applications, software patents, copyrights and trade secrets."
 faq_schema: true
@@ -18,19 +17,19 @@ faq_schema: true
         <div class="faq">
           {%- for q in group.items %}
           <details>
-            <summary>{{ q.q }} <span class="pm" aria-hidden="true"></span></summary>
+            <summary>{{ q.q }}</summary>
             <div class="a">{{ q.a | markdownify }}</div>
           </details>
           {%- endfor %}
         </div>
       </div>
       {%- endfor %}
-      <p class="fine" style="margin-top:40px;color:var(--muted);font-size:.9rem">This information is general and is not legal advice. Reading it does not create an attorney-client relationship.</p>
+      <p class="fine" style="margin-top:40px">This information is general and is not legal advice. Reading it does not create an attorney-client relationship.</p>
     </div>
-    <aside class="aside-card" aria-labelledby="faq-aside">
+    <aside class="aside" aria-labelledby="faq-aside">
       <h2 id="faq-aside">Still have questions?</h2>
       <p>Get answers specific to your business in a free, no-obligation discovery session.</p>
-      <a class="btn" href="{% include book-href.html %}">Book a free session</a>
+      <a class="btn" href="{% include book-href.html %}">Book a free session <span class="arr" aria-hidden="true">→</span></a>
       <a class="phone" href="tel:{{ site.data.firm.phone_href }}">or call {{ site.data.firm.phone }}</a>
     </aside>
   </div>

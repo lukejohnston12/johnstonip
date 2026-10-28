@@ -1,55 +1,55 @@
 ---
 layout: page
-title: About Bob Johnston & Our Team
+title: Bob Johnston, Dallas IP Attorney
 permalink: /about/
 breadcrumb: About
-eyebrow: About the firm
 heading: Big-firm experience. Boutique attention.
-lede: Johnston IP Law was founded to give growing companies and inventors direct access to seasoned IP counsel — without the overhead of a large firm.
-description: "Meet Robert “Bob” Johnston III, founder of Johnston IP Law: mechanical engineer, former chief IP counsel, D Magazine Best Lawyer and past chair of the Dallas Bar Association IP Section."
+lede: Johnston IP Law gives growing companies and inventors direct access to seasoned IP counsel, without the layers and overhead of a large firm.
+description: "Meet Robert “Bob” Johnston III, founder of Johnston IP Law in Dallas: mechanical engineer, former chief IP counsel, D Magazine Best Lawyer and past chair of the Dallas Bar Association IP Section."
 ---
 {%- assign img = site.data.images -%}
 <section class="section">
   <div class="wrap founder">
-    <figure class="portrait">
-      {%- if img.founder_portrait.src != "" %}
-      <img src="{{ img.founder_portrait.src }}" alt="{{ img.founder_portrait.alt }}" width="{{ img.founder_portrait.width }}" height="{{ img.founder_portrait.height }}" fetchpriority="high" decoding="async">
-      {%- else %}
-      <div class="monogram">{% include logo-mark.html %}</div>
-      {%- endif %}
-      <figcaption><b>Robert “Bob” Johnston III</b><span>Founder &amp; Managing Member</span></figcaption>
+    <figure class="fig">
+      <div class="frame">
+        {%- if img.founder_portrait.src != "" %}
+        <img src="{{ img.founder_portrait.src }}" alt="{{ img.founder_portrait.alt }}" width="{{ img.founder_portrait.width }}" height="{{ img.founder_portrait.height }}" fetchpriority="high" decoding="async">
+        {%- else %}
+        <div class="ph">{% include logo-mark.html %}</div>
+        {%- endif %}
+        <i class="tick a"></i><i class="tick b"></i><i class="tick c"></i><i class="tick d"></i>
+      </div>
+      <figcaption><span>Fig. 1</span><span>Founder &amp; Managing Member</span></figcaption>
     </figure>
     <div class="prose">
-      <p class="eyebrow">Our founder</p>
+      <span class="label">Our founder</span>
       <h2 style="margin-top:0">Robert “Bob” Johnston III</h2>
-      <p>Bob Johnston founded Johnston IP Law, PLLC to help companies and individuals build value and protect their future through trademarks and patents. Before starting the firm, he practiced at multinational law firms and served as chief intellectual property counsel for a technology startup that achieved a market capitalization of over a billion dollars.</p>
-      <p>Trained as a mechanical engineer, Bob prepares and prosecutes trademark and patent applications before the United States Patent and Trademark Office. He has helped clients across the full spectrum of intellectual property, in industries from medical devices, software and energy to hospitality, retail and aviation. His experience includes a two-week patent jury trial with a favorable verdict and a patent reexamination involving a medical device.</p>
-      <p>Bob has been named a D Magazine Best Lawyer in multiple years and has served as chair of the Dallas Bar Association’s Intellectual Property Section.</p>
-      <ul class="creds">
-        <li>{% include icon.html name="grad" %} B.S. Mechanical Engineering, Baylor University</li>
-        <li>{% include icon.html name="grad" %} J.D., Southern Methodist University</li>
-        <li>{% include icon.html name="shield" %} Registered to practice before the USPTO</li>
-        <li>{% include icon.html name="scale" %} Admitted in Texas, Oklahoma, Texas federal district courts &amp; the Federal Circuit</li>
-        <li>{% include icon.html name="award" %} D Magazine Best Lawyers</li>
-        <li>{% include icon.html name="users" %} Past chair, Dallas Bar Association IP Section</li>
-      </ul>
+      <p class="lede">Bob founded Johnston IP Law, PLLC to help companies and individuals build value and protect their future through trademarks and patents.</p>
+      <p>Before starting the firm, he practiced at multinational law firms and served as chief intellectual property counsel for a technology startup that achieved a market capitalization of more than a billion dollars. That in-house seat taught him what IP is actually for: supporting a business as it launches, raises money and grows.</p>
+      <p>Trained as a mechanical engineer, Bob prepares and prosecutes trademark and patent applications before the U.S. Patent and Trademark Office. His clients range from solo founders to established companies in medical devices, software, energy, hospitality, retail and aviation. His experience includes a two-week patent jury trial with a favorable verdict and a patent reexamination involving a medical device.</p>
+      <p>He has been named a D Magazine Best Lawyer in multiple years and has served as chair of the Dallas Bar Association’s Intellectual Property Section.</p>
+      <dl class="creds">
+        <dt>Education</dt><dd>B.S. Mechanical Engineering, Baylor University<br>J.D., Southern Methodist University</dd>
+        <dt>Admitted</dt><dd>Texas · Oklahoma · Texas federal district courts · U.S. Court of Appeals for the Federal Circuit</dd>
+        <dt>Registered</dt><dd>U.S. Patent and Trademark Office</dd>
+        <dt>Recognition</dt><dd>D Magazine Best Lawyers<br>Past Chair, Dallas Bar Association IP Section</dd>
+      </dl>
     </div>
   </div>
 </section>
 
-<section class="section section--mist" id="team" aria-labelledby="team-title">
+<section class="section section--alt" id="team" aria-labelledby="team-title">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Our team</p>
-      <h2 id="team-title">A focused team, registered before the USPTO.</h2>
-      <p class="lede">Our attorneys are registered to practice before the U.S. Patent and Trademark Office and are supported by experienced paraprofessionals — so you always know who’s handling your matter.</p>
-    </div>
-    <div class="grid grid-2">
-      {%- for p in site.data.team %}
-      <div class="person">
-        <div class="avatar" aria-hidden="true">{{ p.initials }}</div>
-        <div><h3>{{ p.name }}</h3><p>{{ p.role }}</p></div>
+    <div class="head">
+      <div>
+        <span class="label">Our team</span>
+        <h2 id="team-title">A small team, by design.</h2>
       </div>
+      <p>Our attorneys are registered to practice before the USPTO and supported by experienced paraprofessionals, so you always know who is handling your matter.</p>
+    </div>
+    <div class="cols">
+      {%- for p in site.data.team %}
+      <div class="person"><span class="avatar" aria-hidden="true">{{ p.initials }}</span><div><h3>{{ p.name }}</h3><p>{{ p.role }}</p></div></div>
       {%- endfor %}
     </div>
   </div>
@@ -57,14 +57,16 @@ description: "Meet Robert “Bob” Johnston III, founder of Johnston IP Law: me
 
 <section class="section" aria-labelledby="values-title">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">How we work</p>
-      <h2 id="values-title">What working with us feels like.</h2>
+    <div class="head">
+      <div>
+        <span class="label">How we work</span>
+        <h2 id="values-title">What working with us is like.</h2>
+      </div>
     </div>
-    <div class="grid grid-3">
-      <div class="card"><div class="icon">{% include icon.html name="chat" %}</div><h3>Plain English</h3><p>Clear explanations, honest assessments and no jargon for its own sake. You’ll always understand your options.</p></div>
-      <div class="card"><div class="icon">{% include icon.html name="users" %}</div><h3>Direct access</h3><p>You work with experienced counsel, not a rotating cast of associates.</p></div>
-      <div class="card"><div class="icon">{% include icon.html name="rocket" %}</div><h3>Business first</h3><p>We prioritize the protection that supports your goals — launching, raising, licensing or selling.</p></div>
+    <div class="cols cols-3">
+      <div><span class="label">01</span><h3>Plain English</h3><p>Honest assessments and clear explanations. You’ll always understand your options and what they cost.</p></div>
+      <div><span class="label">02</span><h3>Direct access</h3><p>You work with experienced counsel, not a rotating cast of associates.</p></div>
+      <div><span class="label">03</span><h3>Business first</h3><p>We prioritize the protection that supports your goals, whether that’s launching, raising, licensing or selling.</p></div>
     </div>
   </div>
 </section>

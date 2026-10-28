@@ -3,17 +3,17 @@ layout: page
 title: Page not found
 permalink: /404.html
 breadcrumb: Not found
-eyebrow: 404
 heading: This page isn’t registered.
-lede: The page you’re looking for may have moved when we rebuilt the site. Try one of these instead.
+lede: It may have moved when we rebuilt the site. These are good places to pick up from.
 hide_cta: true
 ---
 <section class="section">
   <div class="wrap">
-    <div class="grid grid-3">
-      <a class="card" href="{{ '/' | relative_url }}" style="text-decoration:none"><h2>Home</h2><p>Start from the beginning.</p></a>
-      <a class="card" href="{{ '/trademarks/' | relative_url }}" style="text-decoration:none"><h2>Trademarks</h2><p>Clearance, registration and enforcement.</p></a>
-      <a class="card" href="{{ '/contact/' | relative_url }}" style="text-decoration:none"><h2>Free discovery session</h2><p>Talk to us about your IP.</p></a>
-    </div>
+    <ol class="docket">
+      <li><a href="{{ '/' | relative_url }}"><span class="no">01</span><h2 style="margin:0;font-size:1.6rem">Home</h2><div><p>Start from the beginning, or take the IP Scan.</p></div><span class="arr" aria-hidden="true">→</span></a></li>
+      <li><a href="{{ '/trademarks/' | relative_url }}"><span class="no">02</span><h2 style="margin:0;font-size:1.6rem">Trademarks</h2><div><p>Clearance, registration and enforcement.</p></div><span class="arr" aria-hidden="true">→</span></a></li>
+      <li><a href="{{ '/patents/' | relative_url }}"><span class="no">03</span><h2 style="margin:0;font-size:1.6rem">Patents</h2><div><p>Utility and design patents.</p></div><span class="arr" aria-hidden="true">→</span></a></li>
+      <li><a href="{{ '/contact/' | relative_url }}"><span class="no">04</span><h2 style="margin:0;font-size:1.6rem">Free consultation</h2><div><p>Talk to us about your IP.</p></div><span class="arr" aria-hidden="true">→</span></a></li>
+    </ol>
   </div>
 </section>

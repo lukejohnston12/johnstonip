@@ -1,8 +1,7 @@
 ---
 layout: default
 ---
-<section class="page-hero">
-  {% include slashes.html %}
+<header class="page-head">
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb">
       <ol>
@@ -13,17 +12,16 @@ layout: default
         <li aria-current="page">{{ page.breadcrumb | default: page.title }}</li>
       </ol>
     </nav>
-    {%- if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
     <h1>{{ page.heading | default: page.title }}</h1>
     {%- if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
     {%- if page.hero_cta %}
-    <div class="hero-actions">
-      <a class="btn" href="{% include book-href.html %}">Book a free discovery session {% include icon.html name="arrow" %}</a>
-      <a class="btn btn--ghost" href="tel:{{ site.data.firm.phone_href }}">{% include icon.html name="phone" %} {{ site.data.firm.phone }}</a>
+    <div class="actions">
+      <a class="btn" href="{% include book-href.html %}{% if page.topic %}?topic={{ page.topic }}{% endif %}">Book a free discovery session <span class="arr" aria-hidden="true">→</span></a>
+      <a class="tlink" href="tel:{{ site.data.firm.phone_href }}">Call {{ site.data.firm.phone }}</a>
     </div>
     {%- endif %}
   </div>
-</section>
+</header>
 {{ content }}
 {%- unless page.hide_cta %}
 {% include cta-band.html %}

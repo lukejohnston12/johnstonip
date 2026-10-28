@@ -9,24 +9,24 @@ const font = (f) => `data:font/woff2;base64,${readFileSync(`${root}/assets/fonts
 const mark = readFileSync(`${root}/_includes/logo-mark.html`, "utf8");
 const logo = readFileSync(`${root}/assets/img/logo.svg`, "utf8").replace(/<title>.*?<\/title>/, "");
 const base = `
-@font-face{font-family:M;src:url(${font("montserrat-var.woff2")});font-weight:100 900}
+@font-face{font-family:M;src:url(${font("newsreader-display.woff2")});font-weight:400 600}
+@font-face{font-family:P;src:url(${font("plex-mono-400.woff2")})}
 @font-face{font-family:I;src:url(${font("inter-var.woff2")});font-weight:100 900}
-*{margin:0;box-sizing:border-box}body{background:#0d1117}`;
+*{margin:0;box-sizing:border-box}body{background:#101317}`;
 
 const og = `<style>${base}
 .c{position:relative;width:1200px;height:630px;overflow:hidden;padding:72px 80px;color:#fff;font-family:M;
-background:radial-gradient(800px 400px at 95% 0,rgba(41,180,239,.35),transparent 60%),#0d1117}
-.s{position:absolute;right:-60px;top:-40px;width:720px;opacity:.9}
+background:#101317}
 .b svg{height:70px;width:auto;display:block}
-h1{margin-top:80px;font-size:68px;line-height:1.05;font-weight:800;letter-spacing:-2px;max-width:880px}
-h1 span{color:#26abe3}p{margin-top:28px;font:500 26px I;color:#a9b4c0}</style>
-<div class="c">${readFileSync(`${root}/_includes/slashes.html`, "utf8").replace('class="slashes"', 'class="s"').replace(/class="s s\d"|class="s"(?= d)/g, "")}
+h1{margin-top:96px;font-size:76px;line-height:1.04;font-weight:500;letter-spacing:-1.5px;max-width:1000px}
+h1 span{color:#26abe3}p{position:absolute;left:80px;right:80px;bottom:56px;padding-top:22px;border-top:1px solid #343a43;font:400 20px P;letter-spacing:1px;text-transform:uppercase;color:#a3abb5}</style>
+<div class="c">
 <div class="b">${logo}</div>
-<h1>Grow your brand with <span>trademarks.</span> Protect what you invent with <span>patents.</span></h1>
-<p>Dallas IP counsel · 7,500+ USPTO trademark registrations · Free discovery session</p></div>`;
+<h1>Trademark and patent attorneys for companies built to last.</h1>
+<p>Dallas, Texas · 7,500+ USPTO trademarks registered · Free consultation</p></div>`;
 
 const icon = (size) => `<style>${base}
-.i{width:${size}px;height:${size}px;display:grid;place-items:center;background:#0d1117}.i svg{width:72%}</style>
+.i{width:${size}px;height:${size}px;display:grid;place-items:center;background:#101317}.i svg{width:72%}</style>
 <div class="i">${mark}</div>`;
 
 const browser = await chromium.launch();
