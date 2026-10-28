@@ -89,7 +89,7 @@ strong,b{font-weight:650}
 .hero-mark svg{position:absolute;right:-7%;top:-34%;width:min(64vw,860px);fill:#fff;opacity:.16}
 @media (max-width:980px){.hero-mark svg{top:auto;bottom:-6%;right:-30%;width:120vw;opacity:.12}}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(32px,5vw,72px);align-items:start;padding-top:clamp(44px,6vw,84px)}
-.hero h1{max-width:15ch;margin-bottom:.38em}
+.hero h1{max-width:none;margin-bottom:.38em;font-size:clamp(2.2rem,1.5rem + 2.5vw,3.6rem)}
 .hero h1 .sym{color:#fff}
 .hero .lede{color:var(--navy);max-width:34em;margin-bottom:30px}
 .hero .actions{padding-bottom:clamp(48px,6vw,88px)}
